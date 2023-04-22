@@ -1,11 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import "bootstrap";
+import VueFeather from "vue-feather";
 
-import './assets/main.css'
+import "./assets/scss/main.scss";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
+app.component(VueFeather.name, VueFeather);
 
-app.mount('#app')
+app.mount("#app");

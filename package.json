@@ -8,11 +8,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "vue": "^3.2.47",
+    "vue-feather": "^2.0.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
     "vite": "^4.1.4"
   }
 }

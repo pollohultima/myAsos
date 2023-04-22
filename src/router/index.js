@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LandingPageView from "../views/LandingPageView";
-import ShopView from "../views/ShopView";
-import CheckoutView from "../views/CheckoutView";
-import PaymentCompletedView from "../views/PaymentCompletedView";
+import LandingPageView from "../views/LandingPageView.vue";
+import ShopView from "../views/ShopView.vue";
+import CheckoutView from "../views/CheckoutView.vue";
+import PaymentCompletedView from "../views/PaymentCompletedView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
