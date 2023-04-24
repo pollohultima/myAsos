@@ -13,9 +13,10 @@ const router = createRouter({
       component: LandingPageView,
     },
     {
-      path: "/shop",
+      path: "/shop/:cat_slug/:slug",
       name: "shop",
       component: ShopView,
+      props: true,
     },
     {
       path: "/shop/checkout",
