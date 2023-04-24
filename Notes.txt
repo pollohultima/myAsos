@@ -1,0 +1,28 @@
+WORKFLOW E-COMMERCE
+
+Structure:
+-Landing page (?) (view)
+-Shop page (view)
+-Product details modal (component)
+-Modale carrello modal (component)
+-Pagina dettaglio carrello + checkout (view)
+-Pagamento avvenuto con successo (view)
+
+Packages: 
+-bootstrap
+-feather-icons
+-vue-router
+
+Design Inspirations: 
+-Muzli
+-ColorSpace
+
+Milestones:
+-Creazione struttura base progetto
+-Allacciamento views con rotte
+-Definizione files .vue con struttura di base
+-Definizione Axios con API requests
+-Test API
+-Scrittura html + css per ogni view
+-Test comunicazione componenti
+-Implementazione carrello
