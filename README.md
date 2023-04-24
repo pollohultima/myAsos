@@ -1,4 +1,4 @@
-# .Nel file Notes.exe potete trovare qualche appunto che mi sono scritto prima di iniziare il progetto
+# .Nel file Notes.txt potete trovare qualche appunto che mi sono scritto prima di iniziare il progetto
 
 This template should help get you started developing with Vue 3 in Vite.
 
