@@ -2,12 +2,18 @@
 import apiReverb from "../services/api.reverb.js";
 import DetailsModal from "../components/modals/ProductDetailsModal.vue";
 import { Modal } from "bootstrap";
+import Header from "../components/Header.vue";
 
 export default {
+  components: { DetailsModal, Header },
+
   data() {
     return {
       bass_category: [],
       bass_item: {},
+      subtotal: 0,
+      getTotalQty: 0,
+      shoppingCart: [],
     };
   },
 
@@ -17,6 +23,11 @@ export default {
   },
 
   methods: {
+    stripDescr() {
+      const output = document.getElementById("descr");
+      output.innerHTML = this.bass.description;
+    },
+
     getBasses() {
       let params = this.$route.params;
       apiReverb.getBassesByCategory(params.cat_slug, params.slug).then((r) => {
@@ -30,7 +41,10 @@ export default {
 
     openDetailsModal(item) {
       this.bass_item = item;
-      const detailsModal = new Modal(document.getElementById("detailsModal"));
+      this.bass_item.imgLink = item._links.photo.href;
+      const output = document.getElementById("descr");
+      output.innerHTML = this.bass_item.description;
+      const detailsModal = Modal.getOrCreateInstance("#detailsModal");
       detailsModal.show();
     },
   },
@@ -38,8 +52,9 @@ export default {
 </script>
 
 <template>
+  <Header :_tot_quantity="getTotalQty" :_subtotal="subtotal" />
   <main>
-    <div class="container pt-5">
+    <div class="container py-5">
       <h2 class="mb-4">{{ bass_category.name }}</h2>
       <div class="row g-3">
         <!-- Loop inside category bass array -->
@@ -48,10 +63,10 @@ export default {
           class="col-3"
           @click="openDetailsModal(bass)"
         >
-          <div class="card w-100 h-100 text-white bg-primary">
+          <div class="hover card w-100 h-100 text-white bg-dark">
             <div class="image_container">
               <img
-                class="card-img-top"
+                class="custom_img"
                 :src="bass._links.photo.href"
                 alt="Title"
               />
@@ -65,16 +80,21 @@ export default {
     </div>
   </main>
 
-  <DetailsModal :bass="bass_item" />
+  <DetailsModal :shoppingCart="shoppingCart" :bass="bass_item" />
 </template>
 
 <style lang="scss" scoped>
 .col-3 {
   height: 27rem;
 }
-.card-img-top {
-  width: 100%;
-  height: 25vw;
+
+.image_container {
+  height: 20rem;
+}
+.custom_img {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: bottom;
 }
 </style>

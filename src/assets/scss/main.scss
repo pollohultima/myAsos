@@ -6,11 +6,26 @@
 }
 
 body{
-    background-color: $bg;
+    background-image:url('https://images.pexels.com/photos/65718/pexels-photo-65718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size:cover;
+    backdrop-filter: blur(10px);
+     background-attachment: fixed;
+
 }
 
 main{
-    margin-top: 5rem;
+
     height: calc(100vh - 5rem);
+}
+
+.no_header{
+   margin-top: 0px!important;
+    height: 100vh
+}
+
+.hover{
+  &:hover{
+    cursor: pointer;
+  }
 }
 

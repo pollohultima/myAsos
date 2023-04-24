@@ -4,15 +4,14 @@ import Header from "./components/Header.vue";
 </script>
 
 <template>
-  <Header />
   <RouterView />
 </template>
 
 <style lang="scss">
-$primary: #798cd1;
-$secondary: #b0c1ff;
-$bg: #e9efff;
-$gold: #d2a517;
+$primary: #2c1ed2;
+$secondary: #b5a2d7;
+$bg: #1e1926;
+$jolly: #352b48;
 
 @import "bootstrap";
 </style>

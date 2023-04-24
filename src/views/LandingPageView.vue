@@ -39,12 +39,15 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main class="no_header">
     <div class="container h-100">
       <div class="row flex-column justify-content-center h-100">
         <div class="col-12 mb-4">
+          <div class="text-center mb-5">
+            <h1 class="display-1">myBass</h1>
+          </div>
           <div class="row">
-            <div v-for="cat in bass_categories" class="col">
+            <div v-for="cat in bass_categories" class="col hover">
               <div
                 class="card text-bg-dark"
                 @click="goToThisCategory(cat.product_type_slug, cat.slug)"
@@ -60,12 +63,7 @@ export default {
           </div>
         </div>
         <div class="col-12 text-center">
-          <h2 class="mb-4">Get your next stage weapon</h2>
-          <router-link
-            class="btn btn-lg btn-primary rounded-pill text-white fw-bold"
-            to="shop"
-            >VAI ALLO SHOP</router-link
-          >
+          <h2 class="mb-4 text-white">Get your next stage weapon</h2>
         </div>
       </div>
     </div>
